@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4227777b-3dea-4baf-ac5d-bdaa5be95d54" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transient-detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/transient-detection.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +97,8 @@
       <workItem from="1582536154354" duration="237000" />
       <workItem from="1582536418053" duration="1562000" />
       <workItem from="1582539008309" duration="7669000" />
+      <workItem from="1582570515553" duration="255000" />
+      <workItem from="1582573768906" duration="270000" />
     </task>
     <servers />
   </component>

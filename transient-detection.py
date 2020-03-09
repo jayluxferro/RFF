@@ -22,8 +22,14 @@ data = data['Format'][trim_start:]
 all_data = fx.exp_moving_average(list(map(float, data)), 10)
 average_amplitude = np.mean(all_data)
 all_data = fx.filter_data(all_data, average_amplitude)
+plt.figure()
+plt.plot(np.linspace(1, len(all_data), len(all_data)), all_data)
+plt.xlabel('X')
+plt.ylabel('Amplitude')
+#plt.show()
+
 data = all_data
-data = data[:math.ceil(len(data)/2)]
+data = data[:math.ceil(len(data) / 2)]
 x = np.linspace(1, len(data), len(data))
 
 # print(data)
@@ -44,14 +50,23 @@ v_i = []
 transient_points = []
 transient_points_pos = []
 variance_cutoff = 1.1 * math.pow(10, -5)
+max_amplitude_threshold = 20.4
+max_amplitude_threshold_found = False
 counter = 1
+previous_data_point = 0
 for _ in data:
-    _compute = 1/(sliding_window - 1) * (mean_waveform_points - _) ** 2
+    _compute = 1 / (sliding_window - 1) * (mean_waveform_points - _) ** 2
 
     v_i.append(_compute)
-    if _compute >= variance_cutoff:
-        transient_points.append(_)
-        transient_points_pos.append(counter)
+    
+    if _ >= max_amplitude_threshold:
+        max_amplitude_threshold_found = True
+
+    if _compute >= variance_cutoff and _ >= 0 and _ <= max_amplitude_threshold and _ > previous_data_point:
+        if not max_amplitude_threshold_found:
+            transient_points.append(_)
+            transient_points_pos.append(counter)
+            previous_data_point = _
 
     sliding_window += 1
     counter += 1
