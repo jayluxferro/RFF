@@ -13,10 +13,10 @@ import math
 
 files = ['TX1', 'TX2']
 
-file_name = files[0] + '.CSV'  # test file
+file_name = files[1] + '.CSV'  # test file
 
 data = pd.read_csv(file_name, ',', low_memory=False)
-trim_start = 24
+trim_start = 21
 data = data['Format'][trim_start:]
 
 all_data = fx.exp_moving_average(list(map(float, data)), 10)
