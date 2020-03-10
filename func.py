@@ -2,6 +2,40 @@ import numpy as np
 import math
 
 
+variance_cutoff = 1.1 * math.pow(10, -5)
+max_amplitude_threshold = 20.5
+min_amplitude_threshold = 0
+
+def get_transient_points(data, dataPos=None, min_amplitude_threshold=min_amplitude_threshold, max_amplitude_threshold=max_amplitude_threshold):
+    mean_waveform_points = np.mean(data)
+    sliding_window = 2
+    v_i = []
+    transient_points = []
+    transient_points_pos = []
+    max_amplitude_threshold_found = False
+    counter = 1 if dataPos == None else 0
+    previous_data_point = 0
+    for _ in data:
+        _compute = 1 / (sliding_window - 1) * (mean_waveform_points - _) ** 2
+
+        v_i.append(_compute)
+        
+        if _ >= max_amplitude_threshold:
+            max_amplitude_threshold_found = True
+
+        if _compute >= variance_cutoff and _ >= min_amplitude_threshold and _ <= max_amplitude_threshold and _ > previous_data_point:
+            if not max_amplitude_threshold_found:
+                transient_points.append(_)
+                if dataPos == None:
+                    transient_points_pos.append(counter)
+                else:
+                    transient_points_pos.append(dataPos[counter])
+                previous_data_point = _
+
+        sliding_window += 1
+        counter += 1
+    return transient_points, transient_points_pos
+
 def exp_moving_average(values, window):
     weights = np.exp(np.linspace(-1., 0., window))
     weights /= weights.sum()
