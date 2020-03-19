@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4227777b-3dea-4baf-ac5d-bdaa5be95d54" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transient-detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/transient-detection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +33,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.train">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="rff" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -48,6 +48,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rff" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -80,6 +99,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.train" />
         <item itemvalue="Python.transient-detection" />
       </list>
     </recent_temporary>
@@ -99,6 +119,10 @@
       <workItem from="1582539008309" duration="7669000" />
       <workItem from="1582570515553" duration="255000" />
       <workItem from="1582573768906" duration="270000" />
+      <workItem from="1584618106458" duration="63000" />
+      <workItem from="1584619368235" duration="68000" />
+      <workItem from="1584619459369" duration="127000" />
+      <workItem from="1584621840516" duration="3321000" />
     </task>
     <servers />
   </component>
@@ -114,25 +138,30 @@
       <screen x="36" y="23" width="1404" height="877" />
     </state>
     <state x="435" y="271" key="#com.intellij.fileTypes.FileTypeChooser/36.23.1404.877@36.23.1404.877" timestamp="1582536611770" />
-    <state width="1362" height="230" key="GridCell.Tab.0.bottom" timestamp="1582556226238">
-      <screen x="36" y="23" width="1404" height="877" />
+    <state width="1600" height="279" key="GridCell.Tab.0.bottom" timestamp="1584626324195">
+      <screen x="38" y="23" width="1642" height="1027" />
     </state>
+    <state width="1600" height="279" key="GridCell.Tab.0.bottom/1680.23.1920.1057/38.23.1642.1027@38.23.1642.1027" timestamp="1584626324195" />
     <state width="1362" height="230" key="GridCell.Tab.0.bottom/36.23.1404.877@36.23.1404.877" timestamp="1582556226238" />
-    <state width="1362" height="230" key="GridCell.Tab.0.center" timestamp="1582556226237">
-      <screen x="36" y="23" width="1404" height="877" />
+    <state width="1600" height="279" key="GridCell.Tab.0.center" timestamp="1584626324194">
+      <screen x="38" y="23" width="1642" height="1027" />
     </state>
+    <state width="1600" height="279" key="GridCell.Tab.0.center/1680.23.1920.1057/38.23.1642.1027@38.23.1642.1027" timestamp="1584626324194" />
     <state width="1362" height="230" key="GridCell.Tab.0.center/36.23.1404.877@36.23.1404.877" timestamp="1582556226237" />
-    <state width="1362" height="230" key="GridCell.Tab.0.left" timestamp="1582556226236">
-      <screen x="36" y="23" width="1404" height="877" />
+    <state width="1600" height="279" key="GridCell.Tab.0.left" timestamp="1584626324193">
+      <screen x="38" y="23" width="1642" height="1027" />
     </state>
+    <state width="1600" height="279" key="GridCell.Tab.0.left/1680.23.1920.1057/38.23.1642.1027@38.23.1642.1027" timestamp="1584626324193" />
     <state width="1362" height="230" key="GridCell.Tab.0.left/36.23.1404.877@36.23.1404.877" timestamp="1582556226236" />
-    <state width="1362" height="230" key="GridCell.Tab.0.right" timestamp="1582556226237">
-      <screen x="36" y="23" width="1404" height="877" />
+    <state width="1600" height="279" key="GridCell.Tab.0.right" timestamp="1584626324194">
+      <screen x="38" y="23" width="1642" height="1027" />
     </state>
+    <state width="1600" height="279" key="GridCell.Tab.0.right/1680.23.1920.1057/38.23.1642.1027@38.23.1642.1027" timestamp="1584626324194" />
     <state width="1362" height="230" key="GridCell.Tab.0.right/36.23.1404.877@36.23.1404.877" timestamp="1582556226237" />
-    <state x="239" y="100" key="SettingsEditor" timestamp="1582537842816">
-      <screen x="36" y="23" width="1404" height="877" />
+    <state x="275" y="113" key="SettingsEditor" timestamp="1584618158166">
+      <screen x="38" y="23" width="1642" height="1027" />
     </state>
+    <state x="275" y="113" key="SettingsEditor/1680.23.1920.1057/38.23.1642.1027@38.23.1642.1027" timestamp="1584618158166" />
     <state x="239" y="100" key="SettingsEditor/36.23.1404.877@36.23.1404.877" timestamp="1582537842816" />
     <state x="415" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1582536167827">
       <screen x="36" y="23" width="1404" height="877" />
@@ -140,6 +169,6 @@
     <state x="415" y="294" key="com.intellij.ide.util.TipDialog/36.23.1404.877@36.23.1404.877" timestamp="1582536167827" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/rff$transient_detection.coverage" NAME="transient-detection Coverage Results" MODIFIED="1582541423952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rff$transient_detection.coverage" NAME="transient-detection Coverage Results" MODIFIED="1584621854021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
