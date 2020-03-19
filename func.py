@@ -5,9 +5,11 @@ import math
 variance_cutoff = 1.1 * math.pow(10, -5)
 max_amplitude_threshold = 20.5
 min_amplitude_threshold = 0
+min_points = 5
 
 def get_transient_points(data, dataPos=None, min_amplitude_threshold=min_amplitude_threshold, max_amplitude_threshold=max_amplitude_threshold):
     mean_waveform_points = np.mean(data)
+    print(np.max(data))
     sliding_window = 2
     v_i = []
     transient_points = []

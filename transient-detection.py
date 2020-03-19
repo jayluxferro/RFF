@@ -68,9 +68,11 @@ plt.ylabel('Amplitude')
 # plt.show()
 
 
-# getting transient points
-transient_points, transient_points_pos = fx.get_transient_points(data, None, min_amplitude_threshold, max_amplitude_threshold)
 
+# getting transient points
+transient_points, transient_points_pos = fx.get_transient_points(all_data, None, min_amplitude_threshold, max_amplitude_threshold)
+print(transient_points)
+print(transient_points_pos)
 """
 # print(np.min(v_i), np.max(v_i))
 
