@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4227777b-3dea-4baf-ac5d-bdaa5be95d54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-    </list>
+    <list default="true" id="4227777b-3dea-4baf-ac5d-bdaa5be95d54" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +57,9 @@
       <module name="rff" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -123,6 +123,7 @@
       <workItem from="1584619368235" duration="68000" />
       <workItem from="1584619459369" duration="127000" />
       <workItem from="1584621840516" duration="3321000" />
+      <workItem from="1584670372228" duration="68000" />
     </task>
     <servers />
   </component>
@@ -158,11 +159,12 @@
     </state>
     <state width="1600" height="279" key="GridCell.Tab.0.right/1680.23.1920.1057/38.23.1642.1027@38.23.1642.1027" timestamp="1584626324194" />
     <state width="1362" height="230" key="GridCell.Tab.0.right/36.23.1404.877@36.23.1404.877" timestamp="1582556226237" />
-    <state x="275" y="113" key="SettingsEditor" timestamp="1584618158166">
+    <state x="275" y="113" key="SettingsEditor" timestamp="1584670435695">
       <screen x="38" y="23" width="1642" height="1027" />
     </state>
     <state x="275" y="113" key="SettingsEditor/1680.23.1920.1057/38.23.1642.1027@38.23.1642.1027" timestamp="1584618158166" />
     <state x="239" y="100" key="SettingsEditor/36.23.1404.877@36.23.1404.877" timestamp="1582537842816" />
+    <state x="275" y="113" key="SettingsEditor/38.23.1642.1027@38.23.1642.1027" timestamp="1584670435695" />
     <state x="415" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1582536167827">
       <screen x="36" y="23" width="1404" height="877" />
     </state>
