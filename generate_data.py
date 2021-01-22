@@ -16,7 +16,7 @@ import os
 dataset_path = './dataset'
 data_file = 'data.csv'
 classes = fx.class_names
-cutoff = [(5, 20.5), (6, 12.2)]
+cutoff = [(6.5, 14), (5, 11), (3, 20), (4, 21)]
 
 
 # process data
@@ -50,7 +50,7 @@ for directory in fx.directory_index:
     for file_name in glob.iglob(dataset_path + '/{}/**'.format(directory), recursive=True):
         if os.path.isfile(file_name):
             print(file_name)
-            _tx_index = classes.index(int(directory))
+            _tx_index = int(directory)
             cutoff_points = cutoff[_tx_index]
             data += '{}, {}\n'.format(_tx_index, process_data(file_name, cutoff_points[0], cutoff_points[1]))
 
