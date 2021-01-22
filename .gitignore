@@ -65,6 +65,7 @@ fastlane/screenshots
 /*.com
 /*.save
 /*.py~
+/__pycache__
 
 # ignore data directory
 /dataset
