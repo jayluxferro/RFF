@@ -36,8 +36,6 @@ def process_data(file_name, min_point, max_point):
 
 
 
-file_handler = open(data_file, 'w')
-data = ''
 """
 for _tx in classes:
     for f in range(11, 71):
@@ -52,10 +50,11 @@ for directory in fx.directory_index:
             print(file_name)
             _tx_index = int(directory)
             cutoff_points = cutoff[_tx_index]
-            data += '{}, {}\n'.format(_tx_index, process_data(file_name, cutoff_points[0], cutoff_points[1]))
+            data = '{}, {}\n'.format(_tx_index, process_data(file_name, cutoff_points[0], cutoff_points[1]))
+            file_handler = open(data_file, 'a')
+            file_handler.write(data)
+            file_handler.close()
 
 
 
 
-file_handler.write(data)
-file_handler.close()
