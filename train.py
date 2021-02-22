@@ -10,9 +10,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import LinearSVC, SVC
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import plot_confusion_matrix, plot_roc_curve, plot_precision_recall_curve
+from sklearn.metrics import plot_confusion_matrix, plot_roc_curve, plot_precision_recall_curve, confusion_matrix
 import logger as lg
-
 
 data_file = './dataset.csv'
 data_path = './data/'
@@ -28,8 +27,10 @@ def generateResults(random_state=20, path='all'):
     model = LinearSVC(random_state=0).fit(X_train, y_train)
     print(model)
     lg.success('LinearSVC: {:.2f}\n'.format(model.score(X_test, y_test)))
-    plot_confusion_matrix(model, X_test, y_test, normalize='true', display_labels=fx.class_names, cmap=plt.cm.Blues)
-    plt.title('Linear SVC - {:.2f}%'.format(model.score(X_test, y_test)))
+    y_pred = model.predict(X_test)
+    fx.cm_analysis(y_test, y_pred, fx.class_names, results_path + 'LinearSVC_Detail.png')
+    plot_confusion_matrix(model, X_test, y_test, normalize='true', display_labels=fx.class_names, cmap=plt.cm.Blues, include_values=True)
+    plt.title('Linear SVC - {:.2f}'.format(model.score(X_test, y_test)))
     #plt.show()
     plt.savefig(results_path + 'LinearSVC.eps')
     plt.savefig(results_path + 'LinearSVC.png', dpi=1200)
@@ -37,8 +38,10 @@ def generateResults(random_state=20, path='all'):
     model = SVC(random_state=0).fit(X_train, y_train)
     print(model)
     lg.success('SVC: {:.2f}\n'.format(model.score(X_test, y_test)))
-    plot_confusion_matrix(model, X_test, y_test, normalize='true', display_labels=fx.class_names, cmap=plt.cm.Blues)
-    plt.title('SVC - {:.2f}%'.format(model.score(X_test, y_test)))
+    y_pred = model.predict(X_test)
+    fx.cm_analysis(y_test, y_pred, fx.class_names, results_path + 'SVC_Detail.png')
+    plot_confusion_matrix(model, X_test, y_test, normalize='true', display_labels=fx.class_names, cmap=plt.cm.Blues, include_values=True)
+    plt.title('SVC - {:.2f}'.format(model.score(X_test, y_test)))
     #plt.show()
     plt.savefig(results_path + 'SVC.eps')
     plt.savefig(results_path + 'SVC.png', dpi=1200)
@@ -46,8 +49,10 @@ def generateResults(random_state=20, path='all'):
     model = KNeighborsClassifier(n_neighbors=1).fit(X_train, y_train)
     print(model)
     lg.success('KNN: {:.2f}\n'.format(model.score(X_test, y_test)))
-    plot_confusion_matrix(model, X_test, y_test, normalize='true', display_labels=fx.class_names, cmap=plt.cm.Blues)
-    plt.title('KNN - {:.2f}%'.format(model.score(X_test, y_test)))
+    y_pred = model.predict(X_test)
+    fx.cm_analysis(y_test, y_pred, fx.class_names, results_path + 'KNN_Detail.png')
+    plot_confusion_matrix(model, X_test, y_test, normalize='true', display_labels=fx.class_names, cmap=plt.cm.Blues, include_values=True)
+    plt.title('KNN - {:.2f}'.format(model.score(X_test, y_test)))
     #plt.show()
     plt.savefig(results_path + 'KNN.eps')
     plt.savefig(results_path + 'KNN.png', dpi=1200)
@@ -55,8 +60,10 @@ def generateResults(random_state=20, path='all'):
     model = DecisionTreeClassifier(random_state=0).fit(X_train, y_train)
     print(model)
     lg.success('DecisionTree: {:.2f}\n'.format(model.score(X_test, y_test)))
-    plot_confusion_matrix(model, X_test, y_test, normalize='true', display_labels=fx.class_names, cmap=plt.cm.Blues)
-    plt.title('Decision Tree - {:.2f}%'.format(model.score(X_test, y_test)))
+    y_pred = model.predict(X_test)
+    fx.cm_analysis(y_test, y_pred, fx.class_names, results_path + 'DT_Detail.png')
+    plot_confusion_matrix(model, X_test, y_test, normalize='true', display_labels=fx.class_names, cmap=plt.cm.Blues, include_values=True)
+    plt.title('Decision Tree - {:.2f}'.format(model.score(X_test, y_test)))
     #plt.show()
     plt.savefig(results_path + 'DT.eps')
     plt.savefig(results_path + 'DT.png', dpi=1200)
@@ -64,8 +71,10 @@ def generateResults(random_state=20, path='all'):
     model = LogisticRegression(random_state=0).fit(X_train, y_train)
     print(model)
     lg.success('LogisticRegression: {:.2f}\n'.format(model.score(X_test, y_test)))
-    plot_confusion_matrix(model, X_test, y_test, normalize='true', display_labels=fx.class_names, cmap=plt.cm.Blues)
-    plt.title('Logistic Regression - {:.2f}%'.format(model.score(X_test, y_test)))
+    y_pred = model.predict(X_test)
+    fx.cm_analysis(y_test, y_pred, fx.class_names, results_path + 'LR_Detail.png')
+    plot_confusion_matrix(model, X_test, y_test, normalize='true', display_labels=fx.class_names, cmap=plt.cm.Blues, include_values=True)
+    plt.title('Logistic Regression - {:.2f}'.format(model.score(X_test, y_test)))
     #plt.show()
     plt.savefig(results_path + 'LR.eps')
     plt.savefig(results_path + 'LR.png', dpi=1200)

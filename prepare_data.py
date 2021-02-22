@@ -14,6 +14,10 @@ import math
 data_file = 'data.csv'
 new_data_file = './p_data.csv'
 t_file = './dataset.csv'
+min_points = fx.min_points
+
+# just testing
+min_points = 30
 
 file_handler = open(new_data_file, 'w')
 data = ''
@@ -22,8 +26,8 @@ for _ in open(data_file, 'r').readlines():
     d = _.strip()
     d = d.split(',')
 
-    if len(d) >= (fx.min_points + 1):
-        data += ','.join(d[:fx.min_points + 1]) + '\n'
+    if len(d) >= (min_points + 1):
+        data += ','.join(d[:min_points + 1]) + '\n'
 file_handler.write(data)
 file_handler.close()
 
