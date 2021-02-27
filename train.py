@@ -15,7 +15,7 @@ import logger as lg
 
 data_file = './dataset.csv'
 data_path = './data/'
-data = pd.read_csv(data_file, delimiter=',', header=None)
+data = pd.read_csv(data_file, delimiter=',', header=0)
 targets = data.iloc[:,[0]].values
 inputs = data.iloc[:,1:].values
 
@@ -84,10 +84,10 @@ generateResults()
 
 # only mag
 targets = data.iloc[:,[0]].values
-inputs = data.iloc[:,1:5].values
+inputs = data.iloc[:,[1]].values
 generateResults(path='mag', random_state=19)
 
 # only phase
 targets = data.iloc[:,[0]].values
-inputs = data.iloc[:,5:].values
+inputs = data.iloc[:,[2]].values
 generateResults(path='phase', random_state=20)

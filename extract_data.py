@@ -14,7 +14,7 @@ import glob
 import os
 
 dataset_path = './dataset'
-data_file = 'all_data.csv'
+data_file = 'data.csv'
 log_file = './log.txt'
 
 classes = fx.class_names
@@ -33,10 +33,8 @@ def process_data(file_name, min_point, max_point):
     all_data = fx.exp_moving_average(list(map(float, data)), 10)
     average_amplitude = np.mean(all_data)
     all_data = fx.filter_data(all_data, average_amplitude)
-    """
     transient_points, _ = fx.get_transient_points(all_data, None, min_point, max_point)
-    """
-    return ','.join([str(i) for i in all_data])
+    return ','.join([str(i) for i in transient_points])
 
 
 

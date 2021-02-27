@@ -13,6 +13,7 @@ class_names = ['TX1', 'TX2', 'TX3', 'TX4']
 directory_index = ['0', '1', '2', '3']
 dataset_filters = ['.CSV']
 
+
 def get_transient_points(data, dataPos=None, min_amplitude_threshold=min_amplitude_threshold, max_amplitude_threshold=max_amplitude_threshold):
     mean_waveform_points = np.mean(data)
     print(np.max(data))
