@@ -113,3 +113,18 @@ def cm_analysis(y_true, y_pred, labels, filename, figsize=(10, 6), annot=True):
     plt.figure(figsize=figsize)
     sns.heatmap(cm, annot=annot, fmt='d')
     plt.savefig(filename)
+
+def get_variance(data):
+    # sort data
+    data.sort()
+    res = []
+    holder = 0
+    counter = 0
+    for x in data:
+        if counter == 0:
+            holder = x
+        else:
+            res.append(x - holder)
+            holder = x
+        counter += 1
+    return res

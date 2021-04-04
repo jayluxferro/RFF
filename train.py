@@ -17,7 +17,7 @@ data_file = './dataset.csv'
 data_path = './data/'
 data = pd.read_csv(data_file, delimiter=',', header=0)
 targets = data.iloc[:,[0]].values
-inputs = data.iloc[:,1:].values
+inputs = data.iloc[:,[1, 2, 4, 5, 8, 9]].values
 
 def generateResults(random_state=20, path='all'):
     results_path = data_path + path + '/'
@@ -81,7 +81,7 @@ def generateResults(random_state=20, path='all'):
 
 # all params
 generateResults()
-
+"""
 # only mag
 targets = data.iloc[:,[0]].values
 inputs = data.iloc[:,[1]].values
@@ -91,3 +91,4 @@ generateResults(path='mag', random_state=19)
 targets = data.iloc[:,[0]].values
 inputs = data.iloc[:,[2]].values
 generateResults(path='phase', random_state=20)
+"""
