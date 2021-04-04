@@ -17,6 +17,7 @@ data_file = './dataset.csv'
 data_path = './data/'
 data = pd.read_csv(data_file, delimiter=',', header=0)
 targets = data.iloc[:,[0]].values
+#inputs = data.iloc[:,[2, 8]].values
 inputs = data.iloc[:,[1, 2, 4, 5, 8, 9]].values
 
 def generateResults(random_state=20, path='all'):
