@@ -11,6 +11,8 @@ min_amplitude_threshold = 0
 min_points = 5
 class_names = ['TX1', 'TX2', 'TX3', 'TX4']
 directory_index = ['0', '1', '2', '3']
+#class_names = ['TX1', 'TX2']
+#directory_index = ['0', '2']
 dataset_filters = ['.CSV']
 
 
@@ -66,36 +68,6 @@ def generate_x(data):
     return np.linspace(1, len(data), len(data))
 
 
-def variance(data, avg):
-    _ = 1 / len(data)
-    sum = 0
-
-    for x in data:
-        sum += math.pow((x - avg), 2)
-    return _ * sum
-
-
-def std(data, avg):
-    return math.sqrt(variance(data, avg))
-
-
-def skew(data, avg):
-    _ = 1 / (len(data) * math.pow(std(data, avg), 3))
-    sum = 0
-
-    for x in data:
-        sum += math.pow((x - avg), 3)
-    return _ * sum
-
-
-def kurt(data, avg):
-    _ = 1 / (len(data) * math.pow(std(data, avg), 4))
-    sum = 0
-
-    for x in data:
-        sum += math.pow((x - avg), 4)
-    return _ * sum
-
 def cm_analysis(y_true, y_pred, labels, filename, figsize=(10, 6), annot=True):
     """
     Generate matrix plot of confusion matrix with pretty annotations.
@@ -114,17 +86,9 @@ def cm_analysis(y_true, y_pred, labels, filename, figsize=(10, 6), annot=True):
     sns.heatmap(cm, annot=annot, fmt='d')
     plt.savefig(filename)
 
-def get_variance(data):
-    # sort data
-    data.sort()
-    res = []
-    holder = 0
-    counter = 0
-    for x in data:
-        if counter == 0:
-            holder = x
-        else:
-            res.append(x - holder)
-            holder = x
-        counter += 1
-    return res
+def format_angle(data):
+    _data = []
+    for x in range(len(data)):
+        if x < (len(data) - 1):
+            _data.append(complex(1, float(data[x + 1]) - float(data[x])))
+    return _data
